@@ -1,5 +1,6 @@
 immutable_var = ('буква', 102, 25.6, 'слово')
 print('Immutable_var:',immutable_var)
+#immutable_var[0]='слово'
 
 mutable_list = ['qwerty', 'слон', 56]
 mutable_list[0] = 'йцукен'
