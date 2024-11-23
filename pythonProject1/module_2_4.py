@@ -16,7 +16,7 @@ for i in numbers:  #for i in range(1, 16):
         continue
 
 print('Primes:', primes)
-print('Not Primers:', not_primes)
+print('Not Primes:', not_primes)
 
 
 
