@@ -13,7 +13,7 @@ def is_contains(string, list_to_search):
     string = string.lower()
     for i in range(len(list_to_search)):
         list_to_search[i] = list_to_search[i].lower()
-        j=0
+    j=0
     while j < len(list_to_search):
         if list_to_search[j] == string:
             c = True
