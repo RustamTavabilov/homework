@@ -7,7 +7,6 @@ print_params()
 print_params('a')
 print_params('a', 2)
 print_params('a', 2, 3)
-
 print()
 #Проверьте, работают ли вызовы print_params(b = 25) print_params(c = [1,2,3])
 print_params(b = 25)
