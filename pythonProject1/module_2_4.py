@@ -2,16 +2,16 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 primes = []
 not_primes = []
 
-for i in numbers:  #for i in range(1, 16):
-    a = 0
-    for j in range(1, i+1): #len(numbers)+1
-        q = numbers[i-1] % j
-        if q == 0:
-            a = a + 1
-    if a == 2:
-        primes.append(i)
-    elif a > 2:
-        not_primes.append(i)
+for elem in numbers:
+    chet_deliyel = 0 #счетчик. По определению: Просто́е число́ — натуральное число, имеющее ровно два различных натуральных делителя. С помощью этого счетчика считаю кол-во делителей.
+    for divizor in range(1, elem+1):
+        ostatok = numbers[elem - 1] % divizor
+        if ostatok == 0:
+            chet_deliyel = chet_deliyel + 1 #счётчик делителей без остатка
+    if chet_deliyel == 2:
+        primes.append(elem)
+    elif chet_deliyel > 2:
+        not_primes.append(elem)
     else:
         continue
 
