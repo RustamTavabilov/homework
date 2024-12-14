@@ -1,14 +1,7 @@
 def send_email(message, recipient, sender = "university.help@gmail.com"):
-    if "@" in recipient and "@" in sender:
-        a = True
-    else:
-        a = False
-        print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
-    domen_ = ('.com', '.net', '.ru')
-    if a == False:
-        а = False
-    elif recipient.endswith(domen_) and sender.endswith(domen_):
-        а = True
+    domen = ('.com', '.net', '.ru')
+    if ("@" in recipient) and ("@" in sender)\
+            and recipient.endswith(domen) and sender.endswith(domen):
         if recipient == sender:
             print("Нельзя отправить письмо самому себе!")
         elif sender == "university.help@gmail.com":
