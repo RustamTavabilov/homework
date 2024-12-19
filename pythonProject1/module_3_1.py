@@ -1,4 +1,3 @@
-calls = 0
 def count_calls():
     global calls
     calls = calls + 1
@@ -23,7 +22,7 @@ def is_contains(string, list_to_search):
             c = False
     print(c)
 
-
+calls = 0
 string_info('Capybara')
 string_info('Armageddon')
 is_contains('Urban', ['ban', 'BaNaN', 'urBAN'])
