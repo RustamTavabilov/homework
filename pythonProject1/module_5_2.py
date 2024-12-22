@@ -1,3 +1,4 @@
+#Специальный методы классов
 class House:
     def __init__(self, name, namber_of_floor):
         self.name = name
