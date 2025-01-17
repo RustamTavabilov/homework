@@ -1,59 +1,31 @@
-#Перегрузка операторов
+#История строительства
 class House:
+    houses_history = []
+
     def __new__(cls, *args, **kwargs):
-
-
-
+        instance = super(House, cls).__new__(cls)
+        if args:
+            cls.houses_history.append(args[0])
+        return instance
 
     def __init__(self, name, namber_of_floor):
         self.name = name
         self.namber_of_floor = namber_of_floor
 
-    def go_to(self, new_floor):
-        if self.namber_of_floor > new_floor:
-            for i in range(1, new_floor + 1):
-                print(i)
-        else:
-            print('Такого этажа не существует')
+    def __del__(self):
+        print(f"{self.name} снесён, но он останется в истории")
 
-    def __len__(self):
-        return self.namber_of_floor
+h1 = House('ЖК Эльбрус', 10)
+print(House.houses_history)
+h2 = House('ЖК Акация', 20)
+print(House.houses_history)
+h3 = House('ЖК Матрёшки', 20)
+print(House.houses_history)
 
-    def __str__(self):
-        self.info = f'Название: {self.name}, кол-во этажей: {self.namber_of_floor}'
-        return self.info
-
-    def __eq__(self, other):
-        return self.namber_of_floor == other.namber_of_floor
-
-    def __lt__(self, other):
-        return self.namber_of_floor < other.namber_of_floor
-
-    def __le__(self, other):
-        return self.namber_of_floor <= other.namber_of_floor
-
-    def __gt__(self, other):
-        return self.namber_of_floor > other.namber_of_floor
-
-    def __ge__(self, other):
-        return self.namber_of_floor >= other.namber_of_floor
-
-    def __ne__(self, other):
-        return self.namber_of_floor != other.namber_of_floor
-
-    def __add__(self, value):
-        self.namber_of_floor += value
-        return self
-
-    def __radd__(self, value):
-        self.namber_of_floor += value
-        return self
-
-    def __iadd__(self, value):
-        self.namber_of_floor += value
-        return self
-
-houses_history =[]
+# Удаление объектов
+del h2
+del h3
+print(House.houses_history)
 
 
 
